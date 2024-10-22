@@ -1,0 +1,29 @@
+{
+    "menu": [
+      {
+        "img": "img/rose-disc.jfif",
+        "alt": "alt",
+        "title": "Корзина роз",
+        "price": 1000
+      },
+      {
+        "img": "img/rose-disc.jfif",
+        "alt": "alt",
+        "title": "Корзина роз",
+        "price": 1000
+      },
+      {
+        "img": "img/rose-disc.jfif",
+        "alt": "alt",
+        "title": "Корзина роз",
+        "price": 1000
+      },
+      {
+        "img": "img/rose-disc.jfif",
+        "alt": "alt",
+        "title": "Корзина роз",
+        "price": 1000
+      }
+      
+    ]
+  }

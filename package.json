@@ -1,0 +1,14 @@
+{
+  "name": "website_sell_flowers",
+  "version": "1.0.0",
+  "description": "Maket from Figma",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nikita Sychev",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}
