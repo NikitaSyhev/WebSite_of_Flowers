@@ -11,6 +11,16 @@
 </head>
 <body>
     <header>
+        <div class="login-div">
+            <form action="POST" >
+                <label  for="email-user">Введите почту</label>
+                <input id="email-user" name="email-user" type="email" required>
+                <label for="login-user">Введите пароль</label>
+                <input id="pass-user" name="login-user" type="password" required>
+                <button class="button-login">ВОЙТИ</button>
+            </form>
+        </div>
+        
         <div class="top">
             <div class="left-header">
                 <nav class="head-nav">
@@ -22,7 +32,7 @@
                 </nav>
             </div>
             <div class="right-header">
-                    <a href="#" class="h-nav-item">Личный кабинет</a>
+                    <a href="#" class="h-nav-item" id="login-enter">Личный кабинет</a>
                     <img src="img/login.png" alt="login" class="pic-log">
             </div>
         </div>
@@ -72,7 +82,7 @@
             <!-- здесь верстка формируется динамически в скрипте, данные берутся из JSON -->
         </div>
         <p class="title">Заказать уникальный букет</p>
-        <form action="#" method="post">
+        <form class="form" action="#" method="post">
             <div class="form-left">
                 <input type="text" id="name" name="name" placeholder="Ваше имя*" required>
                 <input type="tel" id="phone" name="phone" placeholder="Ваш телефон*" required>

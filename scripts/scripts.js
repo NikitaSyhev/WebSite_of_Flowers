@@ -86,6 +86,43 @@ getResourses('discounts.json')
 
 
 
+//открытие формы авторизации
+
+const btn = document.querySelector('#login-enter'),
+      modal = document.querySelector('.login-div'),
+      main = document.querySelector('main');
+   
+
+// добавили класс скрытия, чтобы не показывать окно при загрузке
+modal.classList.add('hide');
 
 
+btn.addEventListener('click', ()=> {
 
+    modal.classList.add('show');
+    modal.classList.remove('hide');
+    //запретили скролл
+    document.body.style.overflow = 'hidden';
+});
+
+//закрытие формы авторизации по клику на остальное поле
+
+main.addEventListener('click', e => {
+    if(e.target != modal) {
+
+    }
+        modal.classList.add('hide');
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+});
+
+
+  //обработчик закрытия окна при клике на ESC
+  document.addEventListener('keydown',(e) => {
+    if(e.code === 'Escape' && modal.classList.contains('show')) 
+        {
+            modal.classList.add('hide');
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+});

@@ -230,7 +230,7 @@ footer {
     font-weight: 400;
 }
 
-form {
+.form {
     display: flex;
     justify-content: space-around;
     border:3px solid #55B74C;
@@ -312,7 +312,6 @@ label {
     font-weight: 700;
     line-height: 32.78px;
     margin-top: 20px;
-
 }
 
 .btn-send-file {
@@ -503,5 +502,25 @@ button {
 
     margin-top: 70px;
 }
+
+.login-div {
+
+
+    position: absolute;
+    top: 0px;
+    width: 1200px;
+    padding: 18px 6% 60px 6%;
+    margin: 0 0 35px 0;
+    background: rgb(247, 247, 247);
+    border: 1px solid #55B74C;
+    box-shadow:
+        0pt 2px 5px rgba(105, 108, 109,  0.7),
+        0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+    border-radius: 5px;
+}
+
+/* классы активности */
+.show{display:flex}
+.hide{display:none}
 
 
