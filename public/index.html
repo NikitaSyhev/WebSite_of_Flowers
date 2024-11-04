@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="login-div">
+            <form action="POST" >
+                <label  for="email-user">Введите почту</label>
+                <input id="email-user" name="email-user" type="email" required>
+                <label for="login-user">Введите пароль</label>
+                <input id="pass-user" name="login-user" type="password" required>
+                <button class="button-login">ВОЙТИ</button>
+            </form>
+        </div>
+        
+        <div class="top">
+            <div class="left-header">
+                <nav class="head-nav">
+                    <a href="#" class="h-nav-item">Контакты</a>
+                    <a href="#" class="h-nav-item">О нас</a>
+                    <a href="#" class="h-nav-item">Доставка</a>
+                    <a href="#" class="h-nav-item">Политика безопасности</a>
+                    <a href="#" class="h-nav-item">Условия соглашения</a>
+                </nav>
+            </div>
+            <div class="right-header">
+                    <a href="#" class="h-nav-item" id="login-enter">Личный кабинет</a>
+                    <img src="img/login.png" alt="login" class="pic-log">
+            </div>
+        </div>
+
+        <div class="middle">
+            <img src="img/Fror.png" alt="login" class="logo">
+            <div class="addres-shop">
+                <p class="h-nav-item-middle">Адрес магазина</p>
+                <p class="city">Г.Москва</p>
+            </div>
+            <div class="main-office">
+                <p class="h-nav-item-middle">Главный офис</p>
+                <div class="telephone-num">
+                    <img src="img/Телефон.png" class="tel-pic" alt="telephone">
+                    <p class="telephone">+ 7 968 765 70 07</p>
+                </div>
+                
+            </div>
+            <div class="main-signs">
+                <img src="img/loop.png" alt="loop" class="loop">
+                <img src="img/shoping-bag.png" alt="shoping-bag" class="shoping-bag">
+                <img src="img/heart.png" alt="heart" class="heart">
+            </div>
+        </div>
+       
+        <div class="bottom">
+            <a href="#" class="bottom-head">Цветы</a>
+            <a href="#" class="bottom-head">Подарки</a>
+            <a href="#" class="bottom-head">Фруктовые корзины</a>
+            <a href="#" class="bottom-head">Воздушные шарики</a>
+            <a href="#" class="bottom-head">Комнатные растения</a>
+            <a href="#" class="bottom-head">Сладости</a>
+            <a href="#" class="bottom-head">Услуги</a>
+            <a href="#" class="bottom-head">Аксессуары</a>
+        </div>
+    </header>
+    <main>
+        <div class="picture-main">
+            <img src="img/main.jfif" alt="main" class="main-block">
+        </div>
+
+        <div class="goods">
+          <!-- здесь верстка формируется динамически в скрипте, данные берутся из JSON -->
+        </div>
+        <p class="title">Акция</p>
+        <div class="goods-discounts">
+            <!-- здесь верстка формируется динамически в скрипте, данные берутся из JSON -->
+        </div>
+        <p class="title">Заказать уникальный букет</p>
+        <form class="form" action="#" method="post">
+            <div class="form-left">
+                <input type="text" id="name" name="name" placeholder="Ваше имя*" required>
+                <input type="tel" id="phone" name="phone" placeholder="Ваш телефон*" required>
+                <textarea name="text" id="textarea">Ваша идея*</textarea>
+                <div class="btn-send-file">
+                    <label for="file">+Прикрепить файл</label>
+                    <input type="file" id="file">
+                    <button class="btn-form">Отправить</button>
+                </div>
+            </div>
+            <div class="form-right">
+                <img src="img/form.jfif" alt="form" class="img-form">
+            </div>
+            
+        </form>
+        <p class="title">4 веские причины выбрать нас</p>
+
+        <div class="for-reasons">
+            <div class="reason">
+                <img class="reason-img" src="img/reason1.png" alt="reason1">
+                <p class="reason-par">Качество</p>
+                <p class="reason-desc">На Рыжском рынке предоставлены оптовые продавцы, которые торгуют самыми свежими цветами</p>
+            </div>
+            <div class="reason">
+                <img class="reason-img" src="img/reason2.png" alt="reason2">
+                <p class="reason-par">Фото-отчет</p>
+                <p class="reason-desc">Перед доставкой мы отправляем Вам фотографию готового букета</p>
+            </div>
+            <div class="reason">
+                <img class="reason-img" src="img/reason3.png" alt="reason3">
+                <p class="reason-par">Цена</p>
+                <p class="reason-desc">Да, у нас самые дешевые цены в онлайне! В 2-3 раза дешевле от обычных!</p>
+            </div>
+            <div class="reason">
+                <img class="reason-img" src="img/reason4.png" alt="reason4">
+                <p class="reason-par">Время</p>
+                <p class="reason-desc">Мы доставляем от 2-х часов! (Реальное время, а не маркетинговый ход) И принимаем заказы 24/7</p>
+            </div>
+        </div>
+
+        <p class="title">Как оформить заказ?</p>
+
+        <div class="for-reasons">
+            <div class="reason">
+                <img class="reason-img" src="img/step1.png" alt="step1">
+                <p class="reason-par">Оставьте заявку на сайте</p>
+                <p class="reason-desc">Наш сотрудник свяжется с Вами для уточнения деталей вашего заказа</p>
+            </div>
+            <div class="reason">
+                <img class="reason-img" src="img/step2.png" alt="step2">
+                <p class="reason-par">Фото-отчет</p>
+                <p class="reason-desc">Перед доставкой мы пришлем фотографию готового Вашего букета, чтобы Вы убедились в его качестве. После утверждения вами заказа, курьер поедет по адресу</p>
+            </div>
+            <div class="reason">
+                <img class="reason-img" src="img/step3.png" alt="step3">
+                <p class="reason-par">Способ оплаты</p>
+                <p class="reason-desc">Наличными либо безналичным расчетом банковской картой после доставки</p>
+            </div>
+            <div class="reason">
+                <img class="reason-img" src="img/step4.png" alt="step4">
+                <p class="reason-par">Доставка</p>
+                <p class="reason-desc">Возьмём на себя все заботы по созданию, оформлению и доставке корпоративных букетов в обычные и праздничные дни за разумные деньги</p>
+            </div>
+        </div>
+       
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div class="part-footer one-footer">
+                <p class="footer-title">Информация</p><br>
+                О нас<br>
+                Доставка<br>
+                Политика безопасности<br>
+                Условия соглашения<br>
+            </div>
+            <div class="part-footer two-footer">
+                <p class="footer-title">Каталог</p><br>
+                Цветы<br>
+                Подарки<br>
+                Фруктовые корзины<br>
+                Воздушные шарики<br>
+                Комнатные растения<br>
+                Сладости<br>
+                Услуги<br>
+                Аксессуары<br>
+            </div>
+            <div class="part-footer three-footer">
+                <p class="footer-title">Личный кабинет</p><br>
+                Личный кабинет<br>
+                Корзина<br>
+            </div>
+            <div class="part-footer four-footer">
+                <p class="footer-title">Адрес</p><br>
+                гор. Москва<br>
+            </div>
+            <div class="left-left-footer">
+                <div class="part-footer five-footer">
+                    <p class="footer-title">Телефоны</p><br>
+                    <div class="telephone-num-footer">
+                        <img src="img/Телефон.png" class="tel-pic-footer" alt="telephone">
+                        <p class="telephone-footer">+7 968 765 70 07</p><br>
+                    
+                    </div>
+                    <div class="telephone-num-footer">
+                        <img src="img/Телефон.png" class="tel-pic-footer" alt="telephone">
+                        <p class="telephone-footer">+7 968 765 70 07</p><br>
+                    
+                    </div>
+                </div>
+                <div class="part-footer six-footer">
+                    <p class="footer-title">По любым вопросам</p>
+                    info@floristman.ru<br>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="bottom-left">
+                <img src="img/bottom1.png" alt="bottom" class="bottom-img">
+                <img src="img/bottom2.png" alt="bottom" class="bottom-img">
+                <img src="img/bottom3.png" alt="bottom" class="bottom-img">
+                <img src="img/bottom4.png" alt="bottom" class="bottom-img">
+                <img src="img/bottom5.png" alt="bottom" class="bottom-img">
+                <img src="img/bottom6.png" alt="bottom" class="bottom-img">
+                
+            </div>
+            <div class="bottom-right">
+                <img src="img/bottom8.png" alt="bottom" class="bottom-img">
+                <img src="img/bottom9.png" alt="bottom" class="bottom-img">
+                <img src="img/bottom10.png" alt="bottom" class="bottom-img">
+                <img src="img/bottom11.png" alt="bottom" class="bottom-img">
+                <img src="img/bottom12.png" alt="bottom" class="bottom-img">
+            </div>
+        </div>
+
+        <div class="footer-down">
+            <div class="bottom-down">
+                <img src="img/bottom13.png" alt="bottom" class="bottom-img">
+                <img src="img/bottom14.png" alt="bottom" class="bottom-img">
+                <img src="img/bottom15.png" alt="bottom" class="bottom-img">
+                <img src="img/bottom16.png" alt="bottom" class="bottom-img">
+            </div>
+        </div>
+        <div class="subs">
+            FloristMan © 2022
+        </div>
+    </footer>
+
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
