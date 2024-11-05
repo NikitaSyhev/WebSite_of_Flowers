@@ -83,7 +83,18 @@ getResourses('discounts.json')
         });
     });
 
+function openModal() {
+    modal.classList.add('show');
+    modal.classList.remove('hide');
+    //запретили скролл
+    document.body.style.overflow = 'hidden';
+}
 
+function closeModal() {
+    modal.classList.add('hide');
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+}
 
 
 //открытие формы авторизации
@@ -96,24 +107,16 @@ const btn = document.querySelector('#login-enter'),
 // добавили класс скрытия, чтобы не показывать окно при загрузке
 modal.classList.add('hide');
 
-
+//обрабтчки открытия модального окна
 btn.addEventListener('click', ()=> {
-
-    modal.classList.add('show');
-    modal.classList.remove('hide');
-    //запретили скролл
-    document.body.style.overflow = 'hidden';
+    openModal();
 });
 
 //закрытие формы авторизации по клику на остальное поле
-
 main.addEventListener('click', e => {
     if(e.target != modal) {
-
+        closeModal();
     }
-        modal.classList.add('hide');
-        modal.classList.remove('show');
-        document.body.style.overflow = '';
 });
 
 
@@ -121,8 +124,52 @@ main.addEventListener('click', e => {
   document.addEventListener('keydown',(e) => {
     if(e.code === 'Escape' && modal.classList.contains('show')) 
         {
-            modal.classList.add('hide');
-            modal.classList.remove('show');
-            document.body.style.overflow = '';
+            closeModal();
         }
 });
+
+//POST запросы в форме авторизации
+
+//функция отправки запроса авторизации
+async function login(email, password) {
+    try {
+        const response = await fetch('/login', {
+            method: "POST",
+            headers: {
+                "Content-type" : "application/json",
+            },
+            body: JSON.stringify({
+                email, password
+            }),
+        });
+
+        const data = await response.json();
+        //успешный вход
+        if(response.ok) {
+            console.log('Вход выполнен');
+            //редирект на на главную страницу
+            window.location.href = "http://localhost:3001/#";
+        }
+        else {
+            console.log('Ошибка входа');
+            alert('Неверный логин или пароль');
+        }
+    } 
+    catch(error) {
+        console.log('Ошибка соединения', error);
+        alert('Ошибка соединения с сервером');
+    }
+}
+
+const buttonLogin = document.querySelector('.button-login');
+
+
+//обработчик события отправки формы
+buttonLogin.addEventListener('submit', (e)=> {
+    e.preventDefault();
+    const login = document.querySelector('#email-user').value,
+          password = document.querySelector('#pass-user').value;
+    
+    login(login, password);
+  
+})
