@@ -1,10 +1,4 @@
-//получили днные с json (db.json) - тест
-fetch('db.json')
-    .then(data => data.json())
-    .then(res => console.log(res));
-
-
-
+// МОДУЛЬ 1: СОЗДАНИЕ КАРТОЧЕК ТОВАРОВ
 // использую классы для создания карточкек категорий
 class MenuCard {
     constructor(img, alt, title, parentSelector) {
@@ -26,8 +20,7 @@ class MenuCard {
     }
 }
 
-//класс карточке со скидками
-
+//класс карточки со скидками
 class MenuDicsount {
     constructor(img, alt, title, price, parentSelector) {
         this.img = img;
@@ -64,12 +57,10 @@ const getResourses = async (url) => {
     return await res.json();
 }
 
-
 //вызов функции
-//строим карточки товаров, фетчим данные с JSON SERVER ( FAKE REST API )
+//строим карточки товаров, фетчим данные db.json
 getResourses('db.json')
     .then(data => {
-        
         data['menu'].forEach(({img, alt, title}) => {
             new MenuCard(img, alt, title, '.goods').render();
         });
@@ -83,6 +74,8 @@ getResourses('discounts.json')
         });
     });
 
+
+// МОДУЛЬ 2: ФОРМА АВТОРИЗАЦИИ
 function openModal() {
     modal.classList.add('show');
     modal.classList.remove('hide');
@@ -98,13 +91,13 @@ function closeModal() {
 
 
 //открытие формы авторизации
-
 const btn = document.querySelector('#login-enter'),
       modal = document.querySelector('.login-div'),
       main = document.querySelector('main');
+    
    
 
-// добавили класс скрытия, чтобы не показывать окно при загрузке
+// добавили класс скрытия, чтобы не показывать окно при загрузке стартовой страницы
 modal.classList.add('hide');
 
 //обрабтчки открытия модального окна
@@ -114,7 +107,7 @@ btn.addEventListener('click', ()=> {
 
 //закрытие формы авторизации по клику на остальное поле
 main.addEventListener('click', e => {
-    if(e.target != modal) {
+    if(!modal.contains(e.target)) {
         closeModal();
     }
 });
@@ -128,10 +121,11 @@ main.addEventListener('click', e => {
         }
 });
 
-//POST запросы в форме авторизации
 
+
+//МОДУЛЬ 3: ОТПРАВКА POST ЗАПРОСОВ ФОРМЫ АВТОРИЗАЦИИ
 //функция отправки запроса авторизации
-async function login(email, password) {
+async function loginSubmit(email, password) {
     try {
         const response = await fetch('/login', {
             method: "POST",
@@ -161,15 +155,13 @@ async function login(email, password) {
     }
 }
 
-const buttonLogin = document.querySelector('.button-login');
 
-
+const formLogin = document.querySelector('.form-login');
 //обработчик события отправки формы
-buttonLogin.addEventListener('submit', (e)=> {
+formLogin.addEventListener('submit', (e)=> {
     e.preventDefault();
     const login = document.querySelector('#email-user').value,
           password = document.querySelector('#pass-user').value;
     
-    login(login, password);
-  
+    loginSubmit(login, password);
 })
