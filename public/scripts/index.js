@@ -140,7 +140,8 @@ async function loginSubmit(email, password) {
         const data = await response.json();
         //успешный вход
         if(response.ok) {
-            console.log('Вход выполнен');
+            alert('Вход успешно выполнен');
+            closeModal();
             //редирект на на главную страницу
             window.location.href = "http://localhost:3001/#";
         }

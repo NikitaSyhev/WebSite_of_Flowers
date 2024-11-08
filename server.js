@@ -10,18 +10,6 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + "/public"));
 
-
-//логировние
-app.use((req, res, next) => {
-    console.log(`Получен запрос: ${req.method} ${req.url}`);
-    next();
-});
-
-//выводит Получен запрос: POST /login
-// Получен POST-запрос на /login с телом: { email: 'admin@admin.ru', password: '1234' }
-// Данные: admin@admin.ru, 1234
-
-
 let port = 3001;
 
 app.get('/', function(req, res) {
@@ -51,35 +39,20 @@ connection.connect(function(err) {
     }
 })
 
-// //вывели данные в консоль для теста
-// connection.query("SELECT * FROM Users",
-//     function(err, results, fields) {
-//         console.log(results); // вывели данные из БД в консоль
+//вывели данные в консоль для теста
+connection.query("SELECT * FROM Users",
+    function(err, results, fields) {
+        console.log(results); // вывели данные из БД в консоль
     
-//     }
-// );
-
-// //закрыли соединение
-// connection.end(function(err) {
-//     if(err) {
-//         return console.error("Error: " + err.message);
-//     }
-//     else {
-//         console.log("Database disconnected");
-//     }
-// })
-
+    }
+);
 
 // НАСТРОЙКА ОБРАБОТКИ ДАННЫХ С ФОРМЫ
 app.post('/login', (req, res) => {
 
-    console.log("Получен POST-запрос на /login с телом:", req.body);
-
     const {email, password} = req.body;
-    console.log(`Данные: ${email}, ${password}`);
-    connection.query("SELECT * FROM Users WHERE email = ? AND password = ?",
-        [email, password],
-        (err, result) => {
+
+    connection.query("SELECT * FROM Users WHERE email = ? AND password = ?", [email, password], (err, result) => {
             if(err) {
                 console.error('Ошибка выполения запроса', err);
                 return res.status(500).json({message: "Ошибка сервера"});
