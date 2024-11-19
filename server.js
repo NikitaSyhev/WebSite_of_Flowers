@@ -3,6 +3,11 @@ const app = express();
 const bodyParser = require('body-parser');
 const mysql = require('mysql2');
 
+const Database = require('./Database');
+
+const config = require('./config');
+const { compile } = require('ejs');
+
 
 
 //НАСТРОЙКА СЕРВЕРА
@@ -21,12 +26,18 @@ app.listen(port, ()=> {
 });
 
 
-// НАСТРОЙКА БАЗЫ ДАННЫХ
+//ВОТ ЭТУ ЧАСТЬ НУЭНО ПЕРЕДЕЛАТЬ
+// const db = new Database()
+
+// db.connect();
+
+
+//НАСТРОЙКА БАЗЫ ДАННЫХ
 const connection = mysql.createConnection({
-    host: "localhost",
+    host: config.host,
     user: "root",
     database: "Flowers_Website",
-    password:"",
+    password:config.password,
 });
 
 //открыли соединение
